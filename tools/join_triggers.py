@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('overlay/controller.svg');s=p.read_text(encoding='utf-8').replace('M220 122L232 43Q238 25 265 25H305Q332 25 337 43L348 122Z','M220 150L232 43Q238 25 265 25H305Q332 25 337 43L348 150Z').replace('M652 122L663 43Q668 25 695 25H735Q762 25 768 43L780 122Z','M652 150L663 43Q668 25 695 25H735Q762 25 768 43L780 150Z');p.write_text(s,encoding='utf-8')

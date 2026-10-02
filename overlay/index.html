@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self' data:"><title>WXX · 控制器覆层</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header id="titlebar"><div class="brand"><b>忍龍 <i>4</i></b><span>CONTROLLER / v1.1.0</span></div><span class="drag-hint"></span><nav><button id="minimize" title="最小化">—</button><button id="close" title="退出">×</button></nav></header>
+<main id="stage"><div id="controller"></div></main>
+<footer><span class="dot"></span><span id="device">连接手柄后按任意键</span><span id="mode-label">LIVE INPUT</span></footer>
+<aside id="settings">
+  <div class="rumble-row"><label for="rumble-process" class="rumble-title">震动捕获</label>
+    <select id="rumble-process"><option value="">选择目标程序</option></select>
+    <output id="rumble-value">0%</output><button id="rumble-clear" title="取消震动捕获并清空已选目标程序">清除</button><button id="copy-url">复制 URL</button>
+  </div>
+  <p id="rumble-status" role="status">选择程序后自动连接</p>
+  <input id="source-url" type="hidden">
+</aside>
+<script src="input.js"></script><script src="renderer.js"></script>
+</body></html>

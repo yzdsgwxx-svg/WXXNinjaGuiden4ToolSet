@@ -1,0 +1,15 @@
+from pathlib import Path
+p=Path('src/launcher.cpp');s=p.read_text(encoding='utf-8').replace('        HBRUSH brush=CreateSolidBrush(down?', '        FillRect(d->hDC,&d->rcItem,(d->CtlID==ID_STEAM||d->CtlID==ID_MINIMIZE||d->CtlID==ID_CLOSE||d->CtlID==ID_OPENSAVES)?gBackground:gCard);\n        HBRUSH brush=CreateSolidBrush(down?')
+s=s.replace('            gSwitchEnabled=!gSwitchEnabled;EnableWindow', '            gSwitchEnabled=!gSwitchEnabled;\n            WritePrivateProfileStringW(L"Toolset",L"SaveSwitch",gSwitchEnabled?L"1":L"0",Join(gExeDir,L"SixSlot.ini").c_str());\n            EnableWindow')
+s=s.replace('    std::wstring args=cmdline?cmdline:L"";', '    gSwitchEnabled=GetPrivateProfileIntW(L"Toolset",L"SaveSwitch",1,Join(gExeDir,L"SixSlot.ini").c_str())!=0;\n    std::wstring args=cmdline?cmdline:L"";')
+s=s.replace('        RefreshAll();gSaveSig=', '        EnableWindow(gProfileBox,gSwitchEnabled);EnableWindow(GetDlgItem(w,ID_SWITCH),gSwitchEnabled);\n        SetWindowTextW(GetDlgItem(w,ID_SWITCH_TOGGLE),gSwitchEnabled?L"已启用 · 关闭":L"已关闭 · 启用");\n        RefreshAll();gSaveSig=')
+p.write_text(s,encoding='utf-8')
+p=Path('src/config.cpp');s=p.read_text(encoding='utf-8').replace('#include <cwchar>', '#include <cwchar>\n#include <dwmapi.h>\n#pragma comment(lib,"dwmapi.lib")\nstatic HBRUSH background=CreateSolidBrush(RGB(26,26,33));')
+s=s.replace('忍龙 4 · 额外武器快捷键','6槽武器设置').replace('6槽武器设置配置','WXX · 6槽武器设置')
+a=s.index('        Add(w,L"STATIC",L"仅支持');b=s.index('\n        Add(w,L"BUTTON"',a)
+s=s[:a]+'        Add(w,L"STATIC",L"八云 · 已解锁武器\\r\\n保存后自动生效",0,24,184,475,62,0);'+s[b:]
+s=s.replace('    case WM_DESTROY:', '    case WM_CTLCOLORSTATIC:case WM_CTLCOLOREDIT:case WM_CTLCOLORLISTBOX:\n        SetTextColor(reinterpret_cast<HDC>(wp),RGB(220,206,194));SetBkColor(reinterpret_cast<HDC>(wp),RGB(26,26,33));return reinterpret_cast<LRESULT>(background);\n    case WM_DESTROY:')
+s=s.replace('wc.hbrBackground=reinterpret_cast<HBRUSH>(COLOR_WINDOW+1);','wc.hbrBackground=background;wc.hIcon=LoadIconW(instance,MAKEINTRESOURCEW(1));')
+s=s.replace('    ShowWindow(w,show);','    BOOL dark=TRUE;DwmSetWindowAttribute(w,20,&dark,sizeof dark);\n    ShowWindow(w,show);')
+p.write_text(s,encoding='utf-8')
+p=Path('build.cmd');s=p.read_text().replace('..\\src\\config.cpp user32.lib','..\\src\\config.cpp toolset.res user32.lib');p.write_text(s)

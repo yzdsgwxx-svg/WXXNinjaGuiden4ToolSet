@@ -1,0 +1,19 @@
+{
+  "name": "wxx-ng4-controller-overlay",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Ninja Gaiden 4 inspired Vader 5 Pro controller overlay",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.js",
+    "pack": "electron-packager . NinjaGuiden4ControllerOverlay --platform=win32 --arch=x64 --out=dist --overwrite --ignore=^/tests --ignore=^/dist --ignore=^/artifacts --ignore=^/vendor --ignore=^/sdl-input.js --ignore=^/diagnostics"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "electron": "^44.5.1"
+  },
+  "dependencies": {
+    "koffi": "^3.3.2"
+  }
+}

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" role="img" aria-label="黑武士 5 Pro 忍龙四主题手柄">
+<defs>
+ <linearGradient id="body" x2=".3" y2="1"><stop stop-color="#424346"/><stop offset=".35" stop-color="#27292d"/><stop offset="1" stop-color="#111317"/></linearGradient>
+ <linearGradient id="gold" x2=".7" y2="1"><stop stop-color="#f4dfb8"/><stop offset=".4" stop-color="#9f8157"/><stop offset=".65" stop-color="#ead1a2"/><stop offset="1" stop-color="#786344"/></linearGradient>
+ <radialGradient id="button" cx=".35" cy=".2"><stop stop-color="#656b6e"/><stop offset=".65" stop-color="#363b40"/><stop offset="1" stop-color="#15191d"/></radialGradient>
+ <radialGradient id="stick" cx=".4" cy=".3"><stop stop-color="#535758"/><stop offset=".8" stop-color="#34393b"/><stop offset="1" stop-color="#191c20"/></radialGradient>
+ <linearGradient id="light"><stop stop-color="#941b31"/><stop offset=".35" stop-color="#f14c56"/><stop offset=".5" stop-color="#ffe3b0"/><stop offset=".65" stop-color="#f14c56"/><stop offset="1" stop-color="#941b31"/></linearGradient>
+ <pattern id="weave" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 9L9 0M-2 2L2-2M7 11L11 7" stroke="#92918a" stroke-opacity=".13" stroke-width="2"/></pattern>
+ <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#e34452" opacity=".25"/></pattern>
+ <filter id="glow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <linearGradient id="silver" x2="0.3" y2="1"><stop stop-color="#ffffff"/><stop offset=".48" stop-color="#e6e5e1"/><stop offset=".5" stop-color="#b4b8bd"/><stop offset="1" stop-color="#f3eeeb"/></linearGradient>
+ <symbol id="ninja-logo" viewBox="0 0 460 150">
+  <!-- Knife-cut letter silhouettes, drawn as paths rather than a system font. -->
+  <g fill="url(#silver)" transform="translate(12 19) skewX(-18)">
+   <path d="M0 83V8L25 8L53 47V8H80V83H55L27 44V83Z M96 8H124L120 16V76L124 83H92L97 75V17Z M140 83V8H165L193 47V8H220V83H195L167 44V83Z M237 8H298L294 17V56Q294 87 261 87Q241 87 229 70L246 55Q251 64 258 64Q268 64 268 52V27H237Z M306 83L328 8H360L393 83H365L360 68H329L326 83Z M336 48H353L343 25Z" fill-rule="evenodd"/>
+   <path d="M-4 56L80 36L80 41L-4 61ZM137 58L220 36V40L137 62ZM306 75L374 53L376 58L305 80Z" fill="#16181d" opacity=".8"/>
+  </g>
+  <path d="M383 12L414 0L391 55L421 53L434 31L459 28L437 66L449 63L441 79L429 83L410 121L383 134L403 84L349 84L354 65Z" fill="#dc152b"/>
+  <path d="M382 16L355 68L364 57M454 30L438 36M355 87L397 85M409 111L388 132" fill="none" stroke="#f34942" stroke-width="2"/>
+  <g fill="#e82838" transform="translate(57 116) skewX(-18)">
+   <path d="M0 0H28V7H9V23H20V17H14V10H29V30H0Z M43 30L53 0H68L79 30H68L66 23H55L53 30Z M58 16H64L61 6Z M96 0H106V30H96Z M125 0H146L155 8V22L146 30H125Z M135 7V23H143L145 20V10L143 7Z M176 0H203V7H186V11H200V18H186V23H204V30H176Z M224 30V0H234L248 17V0H258V30H248L234 13V30Z" fill-rule="evenodd"/>
+  </g>
+ </symbol>
+<clipPath id="rumble-clip"><path d="M897 24L914 44C930 90 938 250 934 466L898 466C902 250 902 90 897 24Z"/></clipPath>
+<clipPath id="grip-clip"><rect x="899" y="514" width="32" height="134" rx="8"/></clipPath>
+<linearGradient id="rumbleGrad" x1="0" y1="1" x2="0" y2="0"><stop stop-color="#ff1526"/><stop offset=".45" stop-color="#f52b28"/><stop offset="1" stop-color="#ff9a72"/></linearGradient>
+<pattern id="rumbleSlats" width="24" height="52" patternUnits="userSpaceOnUse" patternTransform="translate(888 14)"><path d="M0 52L24 0" stroke="#0a0a0d" stroke-width="6.5"/></pattern>
+</defs>
+<g id="pad" transform="translate(-50 42) scale(0.92)">
+<!-- Floating analog triggers, like the reference layout. -->
+<g data-button="6"><path class="surface" d="M220 150L232 43Q238 25 265 25H305Q332 25 337 43L348 150Z"/><path id="lt-fill" class="trigger-fill" d="M242 111H326V111H242Z"/><text x="285" y="65" class="legend" font-size="19">LT</text><text id="lt-value" x="285" y="93" fill="#ba9e7b" font-size="12" text-anchor="middle">0%</text></g>
+<g data-button="7"><path class="surface" d="M652 150L663 43Q668 25 695 25H735Q762 25 768 43L780 150Z"/><path id="rt-fill" class="trigger-fill" d="M674 111H758V111H674Z"/><text x="715" y="65" class="legend" font-size="19">RT</text><text id="rt-value" x="715" y="93" fill="#ba9e7b" font-size="12" text-anchor="middle">0%</text></g>
+<!-- Sculpted body with sloped shoulders and the Vader lower light bar. -->
+<path d="M345 161Q315 139 264 146Q184 150 146 213Q117 273 87 405Q61 510 58 583Q55 655 99 668Q140 679 174 638L295 509Q313 489 343 489H657Q687 489 705 509L826 638Q860 679 901 668Q945 655 942 583Q939 510 913 405Q883 273 854 213Q816 150 736 146Q685 139 655 161Z" fill="url(#body)" stroke="#66605a" stroke-width="2.5"/>
+<!-- Bumpers render above the shell so their full labels and press glow stay visible. -->
+<g data-button="4"><path class="surface" d="M183 178L202 143Q208 134 220 134H329L353 150L341 178Z"/><path d="M204 169H234M308 169H331" fill="none" stroke="#bb8d68" stroke-width="2"/><text x="272" y="156" class="legend" style="font-size:22px">LB</text></g>
+<g data-button="5"><path class="surface" d="M817 178L798 143Q792 134 780 134H671L647 150L659 178Z"/><path d="M796 169H766M692 169H669" fill="none" stroke="#bb8d68" stroke-width="2"/><text x="728" y="156" class="legend" style="font-size:22px">RB</text></g>
+<path d="M150 290Q126 397 89 555Q70 632 101 648Q131 662 166 618L281 491L278 419Z" fill="url(#weave)"/>
+<path d="M850 290Q874 397 911 555Q930 632 899 648Q869 662 834 618L719 491L722 419Z" fill="url(#weave)"/>
+<path d="M345 161L394 250H606L655 161" fill="#14171b" stroke="#5a4544" stroke-width="2"/>
+<path d="M352 173L402 238H598L648 173" fill="none" stroke="#ad3441"/>
+<path d="M130 557L291 493Q314 477 344 477H656Q686 477 709 493L870 557" fill="none" stroke="#090a0c" stroke-width="13"/>
+<path d="M130 554L291 490Q314 474 344 474H656Q686 474 709 490L870 554" fill="none" stroke="url(#light)" stroke-width="5" filter="url(#glow)"/>
+<!-- Blood-red seals, broken geometric tracery and halftone from the game HUD. -->
+<path d="M115 463L154 426L156 377M118 477L173 428L179 370M885 463L846 426L844 377M882 477L827 428L821 370" fill="none" stroke="#94313d" stroke-width="2"/>
+<path d="M190 493L246 432L296 450L259 486Z M810 493L754 432L704 450L741 486Z" fill="url(#dots)"/>
+<use href="#ninja-logo" x="391" y="164" width="218" height="75"/>
+<text x="829" y="568" transform="rotate(46 829 568)" fill="#a69981" text-anchor="middle" font-size="16" letter-spacing="2">VADER 5 PRO</text>
+<!-- Analog stick rings and moving caps. -->
+<g transform="translate(265 281)"><circle r="83" fill="#121519" stroke="#514b44" stroke-width="2"/><circle r="72" fill="url(#gold)"/><circle r="67" fill="none" stroke="#352c20" stroke-width="6" stroke-dasharray="1.5 3"/><circle r="58" fill="#080b0e"/><g id="left-stick" class="stick" data-button="10"><circle class="surface" r="51"/><circle r="44" fill="none" stroke="#787b77" stroke-width="3" stroke-dasharray="1 3"/><circle r="36" fill="none" stroke="#272c2e"/><text y="0" class="legend" style="font-size:12px;fill:#93958d">L</text></g></g>
+<g transform="translate(635 393)"><circle r="78" fill="#121519" stroke="#514b44" stroke-width="2"/><circle r="68" fill="url(#gold)"/><circle r="63" fill="none" stroke="#352c20" stroke-width="6" stroke-dasharray="1.5 3"/><circle r="54" fill="#080b0e"/><g id="right-stick" class="stick" data-button="11"><circle class="surface" r="48"/><circle r="41" fill="none" stroke="#787b77" stroke-width="3" stroke-dasharray="1 3"/><circle r="33" fill="none" stroke="#272c2e"/><text class="legend" style="font-size:12px;fill:#93958d">R</text></g></g>
+<!-- Plus-shaped D-pad: one solid cross (4 arms + hub), keeping the asymmetric Xbox layout.
+     底板比按键大 2px 负责描边，四个方向键彼此紧贴且不描边，所以静止时是一个完整的「+」。 -->
+<g transform="translate(371 393)" class="dpad"><path d="M-24-57Q-24-68 -13-68L13-68Q24-68 24-57L24-28Q24-24 28-24L57-24Q68-24 68-13L68 13Q68 24 57 24L28 24Q24 24 24 28L24 57Q24 68 13 68L-13 68Q-24 68 -24 57L-24 28Q-24 24 -28 24L-57 24Q-68 24 -68 13L-68-13Q-68-24 -57-24L-28-24Q-24-24 -24-28Z" fill="#111418" stroke="#63615e" stroke-width="1.6"/>
+<path d="M-22-22H22V22H-22Z" fill="#25272b"/>
+<g data-button="12"><path class="surface" d="M-22-57Q-22-66 -13-66L13-66Q22-66 22-57L22-22L-22-22Z"/><path d="M-7-40L0-47L7-40" fill="none" stroke="#b3a791" stroke-width="2"/></g>
+<g data-button="13"><path class="surface" d="M-22 57Q-22 66 -13 66L13 66Q22 66 22 57L22 22L-22 22Z"/><path d="M-7 40L0 47L7 40" fill="none" stroke="#b3a791" stroke-width="2"/></g>
+<g data-button="14"><path class="surface" d="M-57-22Q-66-22 -66-13L-66 13Q-66 22 -57 22L-22 22L-22-22Z"/><path d="M-40-7L-47 0L-40 7" fill="none" stroke="#b3a791" stroke-width="2"/></g>
+<g data-button="15"><path class="surface" d="M57-22Q66-22 66-13L66 13Q66 22 57 22L22 22L22-22Z"/><path d="M40-7L47 0L40 7" fill="none" stroke="#b3a791" stroke-width="2"/></g></g>
+<!-- Face buttons -->
+<g data-button="3" transform="translate(756 214)"><circle class="surface" r="31"/><text class="legend" style="fill:#d6ba78">Y</text></g>
+<g data-button="2" transform="translate(697 269)"><circle class="surface" r="31"/><text class="legend" style="fill:#9ab9c8">X</text></g>
+<g data-button="1" transform="translate(815 269)"><circle class="surface" r="31"/><text class="legend" style="fill:#e28082">B</text></g>
+<g data-button="0" transform="translate(756 324)"><circle class="surface" r="31"/><text class="legend" style="fill:#a5bfa4">A</text></g>
+<g data-button="8" transform="translate(429 283)"><rect class="surface" x="-20" y="-15" width="40" height="30" rx="12"/><path d="M-8-6H3V3H-8ZM-3-2H8V7H-3" stroke="#bbb6a9" fill="none"/></g>
+<g data-button="9" transform="translate(571 283)"><rect class="surface" x="-20" y="-15" width="40" height="30" rx="12"/><path d="M-7-5H7M-7 0H7M-7 5H7" stroke="#bbb6a9"/></g>
+<g data-button="16" transform="translate(500 294)"><path class="surface" d="M0-20L20 0L0 20L-20 0Z"/><path d="M0-9L9 0L0 9L-9 0Z" fill="#b99368"/></g>
+<g class="extra" data-extra="C" data-button="17" transform="translate(782 394)"><circle class="surface" r="21"/><text class="legend">C</text></g>
+<g class="extra" data-extra="Z" data-button="18" transform="translate(839 353)"><circle class="surface" r="21"/><text class="legend">Z</text></g>
+<text x="500" y="595" text-anchor="middle" fill="#9a6b65" font-size="10" letter-spacing="4">黒武士 / FIVE PRO</text>
+</g>
+<!-- 震动强度：剑形垂直进度条，能量自剑柄向剑尖增长（#rumble-fill 的 y/height 由 renderer 每帧设置） -->
+<g id="rumble-gauge">
+ <defs><clipPath id="energy-reveal"><rect id="rumble-fill" x="860" y="464" width="90" height="0"/></clipPath></defs>
+ <g clip-path="url(#energy-reveal)"><image href="sword-energy.png" x="549" y="15" width="690" height="499" preserveAspectRatio="none"/></g>
+ <image href="sword-base.png" x="549" y="15" width="690" height="690"/>
+</g>
+</svg>

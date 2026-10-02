@@ -1,0 +1,92 @@
+*{box-sizing:border-box}
+:root{color-scheme:dark;--red:#ec4454;--gold:#cbb58b}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent;color:#d4cfc6;font-family:'Segoe UI','Microsoft YaHei',sans-serif}
+/* 整个窗口都是拖动面：只有下面显式 no-drag 的控件保持可点击。 */
+body{display:flex;flex-direction:column;padding:16px;user-select:none}
+body.preview{background:radial-gradient(ellipse at 50% 30%,#25252b,#101116 75%);border:1px solid #563035;border-radius:16px}
+/* 整条标题栏都是拖动区域，按钮单独 no-drag；这样窗口永远有可抓的位置。 */
+header{display:flex;align-items:center;gap:12px;height:40px;flex-shrink:0;position:relative;z-index:10;padding:0 8px 0 12px;background:linear-gradient(180deg,#1c1b22f2,#131218e6);border:1px solid #4a3036;border-radius:12px;cursor:default}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand b{font-family:serif;color:var(--red);letter-spacing:3px;font-size:20px}
+.brand i{color:#ead6ae}
+.brand span{font-size:9px;letter-spacing:2px;color:#8b8180}
+.drag-hint{flex:1;text-align:center;font-size:9px;letter-spacing:3px;color:#6b6266;overflow:hidden;white-space:nowrap}
+nav{display:flex;gap:6px;flex-shrink:0;position:relative;z-index:20}
+button,select{background:#242127;color:#d5c5bb;border:1px solid #5b343b;border-radius:4px;padding:5px 10px;font:inherit;font-size:11px;cursor:pointer}
+button:hover{border-color:var(--red);color:white}
+#close:hover{background:#ac293b}
+main{flex:1;min-height:150px;display:flex;align-items:center;justify-content:center}
+#controller{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+svg{width:100%;height:100%;overflow:visible;max-height:620px}
+svg text{font-family:'Segoe UI','Microsoft YaHei',sans-serif;pointer-events:none}
+footer{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:1px;color:#8d8380;height:24px;flex-shrink:0}
+#device{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#mode-label{margin-left:auto;white-space:nowrap;font-size:9px;color:#b3946b}
+.dot{width:5px;height:5px;background:#766867;border-radius:50%}
+body.connected .dot{background:#a3cbb3;box-shadow:0 0 8px #a3cbb3}
+aside{flex-shrink:0;border:1px solid #493137;background:#17171dee;padding:12px 16px;border-radius:8px;margin-top:5px}
+.settings-head{display:flex;justify-content:space-between;font-size:12px;color:#d6b99a}
+.settings-head small{font-size:9px;color:#817777}
+.settings-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:16px;margin-top:10px}
+label{font-size:10px;color:#aaa0a0}
+label output{float:right;color:#d9b389}
+select{width:100%;margin-top:6px;padding:4px}
+input[type=range]{display:block;width:100%;height:12px;margin:10px 0 0;accent-color:var(--red)}
+.toggles{display:flex;gap:24px;margin-top:10px}
+input[type=checkbox]{accent-color:var(--red);vertical-align:middle}
+.url-row{display:flex;gap:8px;margin-top:10px}
+.url-row input{flex:1;min-width:0;background:#0f1014;color:#c3b9aa;border:1px solid #3c3035;border-radius:4px;padding:6px;font-size:11px;user-select:text}
+.rumble-row{display:flex;align-items:center;gap:8px;margin-top:10px}
+.rumble-title{font-size:10px;color:#aaa0a0;flex-shrink:0}
+.rumble-row select{flex:1;min-width:0;margin-top:0}
+#rumble-value{font-size:11px;color:#e2595f;min-width:38px;text-align:right;flex-shrink:0}
+p{font-size:10px;color:#8e8185;line-height:1.6;margin:8px 0 0}
+details{font-size:10px;color:#a48b88;margin-top:6px}
+#mapping{display:flex;gap:10px;padding-top:8px}
+#mapping select{width:65px}
+.surface{fill:url(#button);stroke:#64605d;stroke-width:1.6}
+.pressed .surface{fill:#df344b;stroke:#ffd8ba;filter:url(#glow)}
+.pressed .legend{fill:#fff3d4}
+.legend{fill:#c9c6bc;font-size:25px;font-weight:600;text-anchor:middle;dominant-baseline:central}
+.stick .surface{fill:url(#stick)}
+.stick.pressed .surface{fill:#9d2336;stroke:#ffb2a4}
+/* 十字键是「+」形：按键不描边，静止时四个方向与中心拼成一个完整的十字，外描边由底板负责。 */
+.dpad .surface{fill:#25272b;stroke:none}
+/* 十字键按下要和 ABXY 一样变红：`.dpad .surface` 与 `.pressed .surface` 特异性相同、又写在后面，会把通用高亮盖掉，所以单独补一条更高特异性的规则。 */
+.dpad .pressed .surface{fill:#df344b;stroke:#ffd8ba;filter:url(#glow)}
+.dpad .pressed path:not(.surface){stroke:#fff3d4}
+.extra .legend{font-size:13px}
+.extra.unavailable{opacity:.32}
+.trigger-fill{fill:#f24756;filter:url(#glow)}
+body.source{padding:0}
+body.source header,body.source aside,body.source footer{display:none}
+body.source main{}
+.hidden-extras .extra{display:none}
+[hidden]{display:none!important}
+/* 断点必须低于 minWidth(460)，否则跨 DPI 显示器时视口变窄会误触发移动端布局。 */
+@media(max-width:480px){
+ .brand span{display:none}
+ .drag-hint{display:none}
+ .settings-grid{gap:8px}
+ .settings-head small{font-size:8px}
+ body{padding:8px}
+ .toggles{gap:8px}
+}
+nav button{}
+aside select,aside button,aside input,aside textarea{}
+nav button{position:relative;pointer-events:auto}
+
+/* Transparent pixels around the old rounded header were not hit-testable on Windows. */
+header{height:48px;border-radius:6px;background:#19191f;isolation:isolate}
+header :not(nav):not(button){pointer-events:none}
+header nav,header nav button{pointer-events:auto}
+header nav button{}
+body{padding:12px}aside{padding:12px 16px}.rumble-row{margin:0;gap:14px}.rumble-title{font-size:12px}
+#rumble-status{min-height:16px;margin-top:8px}button,select{font-size:12px;padding:8px 12px;border-radius:6px}
+
+/* 透明窗口里 background:transparent 的按钮没有可命中像素，鼠标会落到父级拖动区，
+   导致按钮点不动（WM_NCHITTEST 返回 HTCAPTION）。给它们和标题栏同色的实心底，视觉不变但能收到点击。 */
+#minimize,#close{font-size:0;width:32px;height:32px;padding:0;border:0;background:#19191f;align-self:center;border-radius:6px}
+#minimize:hover{background:#2a2a32}#close:hover{background:#b72a40}
+#minimize::after,#close::before,#close::after{content:"";position:absolute;width:12px;height:1.5px;background:#cec0c1;left:10px;top:15px;pointer-events:none}
+#minimize::after{top:18px}#close::before{transform:rotate(45deg)}#close::after{transform:rotate(-45deg)}

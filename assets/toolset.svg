@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs>
+ <linearGradient id="body" x2=".3" y2="1"><stop stop-color="#424346"/><stop offset=".35" stop-color="#27292d"/><stop offset="1" stop-color="#111317"/></linearGradient>
+ <linearGradient id="gold" x2=".7" y2="1"><stop stop-color="#f4dfb8"/><stop offset=".4" stop-color="#9f8157"/><stop offset=".65" stop-color="#ead1a2"/><stop offset="1" stop-color="#786344"/></linearGradient>
+ <radialGradient id="button" cx=".35" cy=".2"><stop stop-color="#656b6e"/><stop offset=".65" stop-color="#363b40"/><stop offset="1" stop-color="#15191d"/></radialGradient>
+ <radialGradient id="stick" cx=".4" cy=".3"><stop stop-color="#535758"/><stop offset=".8" stop-color="#34393b"/><stop offset="1" stop-color="#191c20"/></radialGradient>
+ <linearGradient id="light"><stop stop-color="#941b31"/><stop offset=".35" stop-color="#f14c56"/><stop offset=".5" stop-color="#ffe3b0"/><stop offset=".65" stop-color="#f14c56"/><stop offset="1" stop-color="#941b31"/></linearGradient>
+ <pattern id="weave" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 9L9 0M-2 2L2-2M7 11L11 7" stroke="#92918a" stroke-opacity=".13" stroke-width="2"/></pattern>
+ <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#e34452" opacity=".25"/></pattern>
+ <filter id="glow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <linearGradient id="silver" x2="0.3" y2="1"><stop stop-color="#ffffff"/><stop offset=".48" stop-color="#e6e5e1"/><stop offset=".5" stop-color="#b4b8bd"/><stop offset="1" stop-color="#f3eeeb"/></linearGradient>
+ <symbol id="ninja-logo" viewBox="0 0 460 150">
+  <!-- Knife-cut letter silhouettes, drawn as paths rather than a system font. -->
+  <g fill="url(#silver)" transform="translate(12 19) skewX(-18)">
+   <path d="M0 83V8L25 8L53 47V8H80V83H55L27 44V83Z M96 8H124L120 16V76L124 83H92L97 75V17Z M140 83V8H165L193 47V8H220V83H195L167 44V83Z M237 8H298L294 17V56Q294 87 261 87Q241 87 229 70L246 55Q251 64 258 64Q268 64 268 52V27H237Z M306 83L328 8H360L393 83H365L360 68H329L326 83Z M336 48H353L343 25Z" fill-rule="evenodd"/>
+   <path d="M-4 56L80 36L80 41L-4 61ZM137 58L220 36V40L137 62ZM306 75L374 53L376 58L305 80Z" fill="#16181d" opacity=".8"/>
+  </g>
+  <path d="M383 12L414 0L391 55L421 53L434 31L459 28L437 66L449 63L441 79L429 83L410 121L383 134L403 84L349 84L354 65Z" fill="#dc152b"/>
+  <path d="M382 16L355 68L364 57M454 30L438 36M355 87L397 85M409 111L388 132" fill="none" stroke="#f34942" stroke-width="2"/>
+  <g fill="#e82838" transform="translate(57 116) skewX(-18)">
+   <path d="M0 0H28V7H9V23H20V17H14V10H29V30H0Z M43 30L53 0H68L79 30H68L66 23H55L53 30Z M58 16H64L61 6Z M96 0H106V30H96Z M125 0H146L155 8V22L146 30H125Z M135 7V23H143L145 20V10L143 7Z M176 0H203V7H186V11H200V18H186V23H204V30H176Z M224 30V0H234L248 17V0H258V30H248L234 13V30Z" fill-rule="evenodd"/>
+  </g>
+ </symbol>
+<clipPath id="rumble-clip"><path d="M897 24L914 44C930 90 938 250 934 466L898 466C902 250 902 90 897 24Z"/></clipPath>
+<clipPath id="grip-clip"><rect x="899" y="514" width="32" height="134" rx="8"/></clipPath>
+<linearGradient id="rumbleGrad" x1="0" y1="1" x2="0" y2="0"><stop stop-color="#ff1526"/><stop offset=".45" stop-color="#f52b28"/><stop offset="1" stop-color="#ff9a72"/></linearGradient>
+<pattern id="rumbleSlats" width="24" height="52" patternUnits="userSpaceOnUse" patternTransform="translate(888 14)"><path d="M0 52L24 0" stroke="#0a0a0d" stroke-width="6.5"/></pattern>
+</defs><rect x="5" y="5" width="246" height="246" rx="50" fill="#15161d" stroke="#87323f" stroke-width="6"/><path d="M79 112V98Q79 82 96 82H161Q179 82 179 98V112" fill="none" stroke="#cbb58b" stroke-width="13"/><rect x="38" y="112" width="180" height="103" rx="16" fill="#292831" stroke="#cbb58b" stroke-width="7"/><path d="M40 150H216" stroke="#a18c6c" stroke-width="5"/><rect x="116" y="139" width="25" height="28" rx="4" fill="#f34458"/><use href="#ninja-logo" x="22" y="24" width="216" height="75"/></svg>
